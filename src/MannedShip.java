@@ -1,36 +1,64 @@
+/**
+ * Se importa la libreria ArrayList.
+ */
 import java.util.ArrayList;
 
+/**
+ * Representa la clase MannedShip que extiende de Ship e implementa de Iship.
+ */
 public class MannedShip extends Ship implements IShip {
     public static ArrayList<MannedShip> list = new ArrayList<>();
     public int numberPassengers;
     public String category;
 
-
+    /**
+     * @param name heredado de la clase Ship.
+     * @param weight heredado de la clase Ship.
+     * @param power heredado de la clase Ship.
+     * @param typeFuel heredado de la clase Ship.
+     * @param motors heredado de la clase Ship.
+     * @param shuttleVehicle heredado de la clase Ship.
+     * @param numberPassengers de la clase MannedShip.
+     * @param category de la clase MannedShip.
+     */
     public MannedShip(String name, int weight, int power, String typeFuel, int motors, int shuttleVehicle, int numberPassengers, String category) {
         super(name, weight, power, typeFuel, motors, shuttleVehicle);
         this.numberPassengers = numberPassengers;
         this.category = category;
     }
 
+    /**
+     * Retorna un valor de tipo int.
+     * @return numberPassengers de la clase MannedShip.
+     */
     public int getNumberPassengers() {
         return numberPassengers;
     }
 
+    /**
+     * Asigna un valor de tipo int.
+     * @param numberPassengers a ingresar
+     */
     public void setNumberPassengers(int numberPassengers) {
         this.numberPassengers = numberPassengers;
     }
 
+    /**
+     * Retorna un valor de tipo String.
+     * @return category de la clase MannedShip.
+     */
     public String getCategory() {
         return category;
     }
 
+    /**
+     * Asigna un valor de tipo String.
+     * @param category a ingresar
+     */
     public void setCategory(String category) {
         this.category = category;
     }
 
-
-    public void up(){
-    }
 
     public boolean quota(int numberPassengers){
         if(numberPassengers <= 50){
@@ -48,7 +76,11 @@ public class MannedShip extends Ship implements IShip {
     public int propel() {
         return 0;
     }
-    //caso impootetico para calcular la velocidad de la sonda
+
+    /**
+     * Representa un caso impootetico para calcular la velocidad de la sonda
+     * @return velocity
+     */
     @Override
     public float calculateVelocity() {
         float velocity = (float) (motors * weight * 9.8);
@@ -59,6 +91,9 @@ public class MannedShip extends Ship implements IShip {
         MannedShip mannedShip = new MannedShip(name, weight, power, typeFuel, motors, shuttleVehicle, numberPassengers,  category);
         list.add(mannedShip);
 
+        /**
+         * Representa un arreglo que retorna una informacion al usuario.
+         */
         for (int i=0; i< list.size(); i++){
             System.out.println("name: " + list.get(i).getName());
             System.out.println("Peso: " + list.get(i).getWeight());

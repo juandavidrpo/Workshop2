@@ -1,20 +1,33 @@
+/**
+ * Se importa una libreria.
+ */
 import javax.swing.*;
 
-
+/**
+ * Representa la clase principal que permite correr el codigo.
+ */
 public class Main {
 
     public static void main(String[] args) {
         String name, typeFuel, explore, category, typesensors, solarPanel;
         int weight, power, motors, shuttleVehicle, orbitTime, numberPassengers, numRoboticArms, capacity, limit = 0;
 
-
+        /**
+         * Representa un bucle while que no termina hasta que limit sea igual a 1.
+         * Representa la interaccion del programa con el usuario.
+         */
         while(limit == 0) {
             int selection = JOptionPane.showOptionDialog(null,"Selecciona un tipo de nave","Creations ships",
                     JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,null,
                     new Object[]{"Sonda", "Nave tripulada", "Nave de mantenimiento", "Nave de carga", "Cerrar"},  "opcion 1");
 
+            /**
+             * Representa el condicional switch case con las diferentes naves a crear.
+             */
             switch (selection + 1) {
-
+                /**
+                 * Representa el caso 1 de la nave tipo Sonda.
+                 */
                 case 1:
                     System.out.println("\n"+"SONDA");
                     name = JOptionPane.showInputDialog("Ingresa el nombre");
@@ -29,6 +42,9 @@ public class Main {
                     Probe.createProbe(name, weight, power, typeFuel, motors, shuttleVehicle, orbitTime, explore);
 
                     break;
+                /**
+                 * Representa el caso 2 de la nave tripulada.
+                 */
                 case 2:
                     System.out.println("\n"+"NAVE TRIPULADA");
                     name = JOptionPane.showInputDialog("Ingresa el nombre");
@@ -43,6 +59,9 @@ public class Main {
                     MannedShip.createMannedShip(name, weight, power, typeFuel, motors, shuttleVehicle, numberPassengers, category);
 
                     break;
+                /**
+                 * Representa el caso de la nave de mantenimiento.
+                 */
                 case 3:
                     System.out.println("\n"+"NAVE DE MANTENIMIENTO");
                     name = JOptionPane.showInputDialog("Ingresa el nombre");
@@ -57,6 +76,9 @@ public class Main {
                     MaintenanceShip.createMaintenanceShip(name, weight, power, typeFuel, motors, shuttleVehicle, numRoboticArms, typesensors);
 
                     break;
+                /**
+                 * Representa el caso 4 de la nave de carga.
+                 */
                 case 4:
                     System.out.println("\n"+"NAVE DE CARGA");
                     name = JOptionPane.showInputDialog("Ingresa el nombre");
@@ -71,6 +93,9 @@ public class Main {
                     CargoShip.createCargoShip(name, weight, power, typeFuel, motors, shuttleVehicle, capacity, solarPanel);
 
                     break;
+                /**
+                 * Representa la condicion final despues de que el usuario decida terminar el programa.
+                 */
                 default:
                     JOptionPane.showMessageDialog(null, "Fin del programa",
                             "null", JOptionPane.INFORMATION_MESSAGE);

@@ -1,37 +1,69 @@
+/**
+ * Se importa la libreria ArrayList.
+ */
 import java.util.ArrayList;
 
+/**
+ * Representa la clase CargoShip que extiende de la clase Ship.
+ */
 public class CargoShip extends Ship {
     public static ArrayList<CargoShip> list = new ArrayList<>();
     public int capacity;
     public String solarPanel;
 
-
+    /**
+     *
+     * @param name heredado de la clase Ship.
+     * @param weight heredado de la clase Ship.
+     * @param power heredado de la clase Ship.
+     * @param typeFuel heredado de la clase Ship.
+     * @param motors heredado de la clase Ship.
+     * @param shuttleVehicle heredado de la clase Ship.
+     * @param capacity de la clase CargoShip.
+     * @param solarPanel de la clase CargoShip.
+     */
     public CargoShip(String name, int weight, int power, String typeFuel, int motors, int shuttleVehicle, int capacity, String solarPanel) {
         super(name, weight, power, typeFuel, motors, shuttleVehicle);
         this.capacity = capacity;
         this.solarPanel = solarPanel;
     }
 
+
+    /**
+     * Retorna un valor de tipo int.
+     * @return capacity de la clase CargoShip.
+     */
     public int getCapacity() {
         return capacity;
     }
 
+    /**
+     * Asigna un valor de tipo int.
+     * @param capacity a ingresar
+     */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
+    /**
+     * Retorna un valor de tipo String.
+     * @return solarPanel de la clase CargoShip.
+     */
     public String getSolarPanel() {
         return solarPanel;
     }
 
-    public String isSolarPanel() {
-        return solarPanel;
-    }
-
+    /**
+     * Asigna un valor de tipo String.
+     * @param solarPanel a ingresar.
+     */
     public void setSolarPanel(String solarPanel) {
         this.solarPanel = solarPanel;
     }
 
+    /**
+     * Sobreescritura de metodos.
+     */
     @Override
     public void move() {
 
@@ -46,6 +78,9 @@ public class CargoShip extends Ship {
         CargoShip cargoShip = new CargoShip(name, weight, power, typeFuel, motors, shuttleVehicle, capacity,  solarPanel);
         list.add(cargoShip);
 
+        /**
+         * Representa un arreglo que retorna una informacion al usuario.
+         */
         for (int i=0; i< list.size(); i++){
             System.out.println("name: " + list.get(i).getName());
             System.out.println("Peso: " + list.get(i).getWeight());
