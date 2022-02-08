@@ -76,7 +76,7 @@ public class MaintenanceShip extends Ship {
         list.add(maintenanceShip);
 
         /**
-         * Representa un arreglo que retorna una informacion al usuario.
+         * Representa un arreglo que después retorna una informacion al usuario.
          */
         for (int i=0; i< list.size(); i++){
             System.out.println("name: " + list.get(i).getName());

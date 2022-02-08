@@ -79,7 +79,7 @@ public class CargoShip extends Ship {
         list.add(cargoShip);
 
         /**
-         * Representa un arreglo que retorna una informacion al usuario.
+         * Representa un arreglo que después retorna una informacion al usuario.
          */
         for (int i=0; i< list.size(); i++){
             System.out.println("name: " + list.get(i).getName());

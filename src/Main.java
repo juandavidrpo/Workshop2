@@ -94,7 +94,7 @@ public class Main {
 
                     break;
                 /**
-                 * Representa la condicion final despues de que el usuario decida terminar el programa.
+                 * Representa la condicion final después de que el usuario decida terminar el programa.
                  */
                 default:
                     JOptionPane.showMessageDialog(null, "Fin del programa",
